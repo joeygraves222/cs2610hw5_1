@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <title>Tech Tips</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'Blog/style.css' %}" type="text/css">
+    </head>
+<body>
+    <header class="Header">
+            <div id="LogoDiv">
+                <a href="{% url 'index' %}"><img id="Logo" src="{% static 'Images/JGBlogImage.png' %}" alt="JG Blog Logo" ></a>
+            </div>
+            <div id="TitleDiv">
+                <h1>My Tech Tips</h1>
+            </div>
+            <nav id="Nav">
+                <span class="NavSpan">
+                        <a href="{% url 'About' %}">About Me </a>
+                        <span id="Pipe">|</span>
+                        <a href="{% url 'TechTips' %}">Tech Tips</a>
+                        <span id="Pipe">|</span>
+                        <a href="{% url 'NewPost' %}">Write A New Post</a>
+                </span>
+            </nav>
+        </header>
+    
+        <div class="BodyDiv">
+            <main class="TipsMainDiv">
+                <article class="TipsDiv">
+                    <h2>My Git Cheatsheet</h2>
+                    <div class="GitDivContainer">
+                        <div class="GitDiv">
+                            <code>git init</code>
+                            <p>Initializes a new repo</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git status</code>
+                            <p>Displays the status of the repo</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git add 'filename'</code>
+                            <p>Starts tracking the new file 'filename'</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git add .</code>
+                            <p>Starts tracking all of the new files</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git commit</code>
+                            <p>Commits the changes to the local repo</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git commit -m"message here"</code>
+                            <p>Commits the changes to the local repo with the message</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git commit -am"message here"</code>
+                            <p>Starts tracking all of the new files and commits with the message</p>
+                        </div>
+                        <div class="GitDiv">
+                            <code>git push</code>
+                            <p>Pushes the commit(s) to the remote repo</p>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <div class="AsideRightDiv">
+                <aside>
+                    <p>Some More of my Interests</p>
+                    <ul>
+                        <li><img class="BioImageTop" src="{% static 'Images/Cooking.jpg' %}" alt="Cooking">
+                        <p>Cooking!!</p></li>
+                        <li><img class="BioImage" src="{% static 'Images/Toilet.jpg' %}" alt="Star Wars Toilet">
+                        <p>Decorating!!</p></li>
+                        <li><img class="BioImageBottom" src="{% static 'Images/Mailbox.jpg' %}" alt="Star Wars Mailbox">
+                        <p>Defacing Federal Property!!</p></li>
+                    </ul>
+
+                </aside>
+            </div>
+        </div>
+        <footer style=" display: block;" >
+            <p>&copy;Joseph Graves - 2018</p>
+            <p>{{time}}</p>
+        </footer>
+    </body>
+
+    
+
+
+</html>

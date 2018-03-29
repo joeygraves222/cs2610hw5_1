@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>About Me</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'Blog/style.css' %}" type="text/css">
+    </head>
+    <body>
+        <header class="Header">
+            <div id="LogoDiv">
+                <a href="{% url 'index' %}"><img id="Logo" src="{% static 'Images/JGBlogImage.png' %}" alt="JG Blog Logo" ></a>
+            </div>
+            <div id="TitleDiv">
+                <h1>My Bio</h1>
+            </div>
+            <nav id="Nav">
+                <span class="NavSpan">
+                        <a href="{% url 'About' %}">About Me </a>
+                        <span id="Pipe">|</span>
+                        <a href="{% url 'TechTips' %}">Tech Tips</a>
+                        <span id="Pipe">|</span>
+                        <a href="{% url 'NewPost' %}">Write A New Post</a>
+                </span>
+            </nav>
+        </header>
+    
+        <div class="BodyDiv">
+            <div class="AsideLeftDiv">
+                    <aside>
+                        <h3>Some Fun Facts About My Hobbies</h3>
+                        <ul>
+                            <li>According to the "United States Parachuting Association", you only have about a 0.0007% chance of dying while skydiving.</li>
+                            <li>Only one Spanish Bullfighter has died in the last 30 years from bullfighting.</li>
+                    
+                        </ul>
+                    </aside>
+            </div>
+
+            <div class="BioMainDiv">
+                <article class="BioDiv">
+                    <img class="jeb" src="{% static 'Images/jeb.jpg' %}" alt="Photo of Jeb">
+                    <h2 class="BioTitle">A Little About Me</h2>
+                    <p>My name is Jebediah Jameson and I am the writer for this Blog.</p>
+                    <P>Let me start by telling you what interests me. I love:</P>
+                    <ul>
+                        <li>Skydiving</li>
+                        <li>Farming</li>
+                        <li>Guaraná Fruit</li>
+                        <li>Bull Fighting</li>
+                        <li>Rock Climbing</li>
+                    </ul>
+                    <p>I know I don't look it but I'm a real thrill seeker. I live for that stuff!</p>
+                    <p>If you don't believe me, just check out some of my pictures on the right of me doing all of this!</p>
+                </article>
+            </div>
+
+            <div class="AsideRightDiv">
+                <aside>
+                    <img class="BioImageTop" src="{% static 'Images/Skydiving.jpg' %}" alt="Jeb Skydiving">
+                    <img class="BioImage" src="{% static 'Images/BullFighting.jpg' %}" alt="Jeb Bull Fighting">
+                    <img class="BioImage" src="{% static 'Images/RockClimbing.jpg' %}" alt="Jeb Rock Climbing">
+                    <img class="BioImage" src="{% static 'Images/Guarana.jpeg' %}" alt="Jeb Eating Guarana">
+                    <img class="BioImageBottom" src="{% static 'Images/Farming.jpg' %}" alt="Jeb Farming">
+                </aside>
+            </div>
+        </div>
+        <footer style=" display: block;" >
+            <p>&copy;Joseph Graves - 2018</p>
+            <p>{{time}}</p>
+        </footer>
+    </body>
+
+    
+
+
+</html>

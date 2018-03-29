@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Create New Post</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'Blog/style.css' %}" type="text/css">
+    </head>
+<body>
+    <header class="Header">
+        <div id="LogoDiv">
+            <a href="{% url 'index' %}"><img id="Logo" src="{% static 'Images/JGBlogImage.png' %}" alt="JG Blog Logo" ></a>
+        </div>
+        <div id="TitleDiv">
+            <h1>New Blog Post</h1>
+        </div>
+        <nav id="Nav">
+            <span class="NavSpan">
+                    <a href="{% url 'About' %}">About Me </a>
+                    <span id="Pipe">|</span>
+                    <a href="{% url 'TechTips' %}">Tech Tips</a>
+                    <span id="Pipe">|</span>
+                    <a href="{% url 'NewPost' %}">Write A New Post</a>
+            </span>
+        </nav>
+        </header>
+
+    
+        <div class="BodyDiv">
+            <div class="AsideLeftDiv">
+                <aside>
+                    <h2>Here is my Aside</h2>
+                    <ul>
+                            <li>Vestibulum vel mauris a libero rhoncus consectetur a nec ipsum.</li>
+                            <li>Nulla eget tellus sit amet neque egestas consequat.</li>
+                            <li>Pellentesque ac neque ut arcu feugiat aliquet at ut libero.</li>
+                            <li>Pellentesque in est quis nibh scelerisque volutpat.</li>
+                            <li>Proin sit amet ipsum imperdiet nulla lacinia interdum.</li>
+                            <li>Proin sed risus a diam condimentum congue.</li>
+                            <li>Proin eget libero lacinia, consectetur justo quis, feugiat ante.</li>
+                    </ul>
+                </aside>
+                <aside>
+                        <h2>Here is another</h2>
+                        <ul>
+                                <li>Vestibulum vel mauris a libero rhoncus consectetur a nec ipsum.</li>
+                                <li>Nulla eget tellus sit amet neque egestas consequat.</li>
+                                <li>Pellentesque ac neque ut arcu feugiat aliquet at ut libero.</li>
+                                <li>Pellentesque in est quis nibh scelerisque volutpat.</li>
+                                <li>Proin sit amet ipsum imperdiet nulla lacinia interdum.</li>
+                                <li>Proin sed risus a diam condimentum congue.</li>
+                                <li>Proin eget libero lacinia, consectetur justo quis, feugiat ante.</li>
+                        </ul>
+                    </aside>
+            </div>
+            <div class="BlogMainDiv">   
+                <form method="post" action="{% url 'CreateNewPost' %}" class="Form">
+                    {% csrf_token %}
+                    <div class="FormSubContainer">
+                        <label>Title:</label>
+                        <input class="FormElement" type="text" placeholder="Enter Title Here..." name="title" maxlength="100" required id="id_title"/>
+                        <!-- {{Form.title}} -->
+                    </div>
+                    <div class="FormSubContainer">
+                        <label>Author Name:</label>
+                        <input class="FormElement" type="text" placeholder="Enter Author Name Here..." name="author" id="id_author" maxlength="100" required/>
+                        <!-- {{Form.author}} -->
+                    </div>
+                    <div class="FormSubContainer">
+                        <label>Blog Content:</label>
+                        <textarea class="FormContentElement" placeholder="Enter Blog Content Here..." name="content" id="id_content" required></textarea>
+                        <!-- {{Form.content}} -->
+                    </div>
+                    <input type="submit" class="FormSubmitButton"/>
+                </form>
+                
+
+            </div>
+            <div class="AsideRightDiv">
+                    <aside>
+                        <h2>This one is on the right side of the flex box</h2>
+                        <ul>
+                                <li>Vestibulum vel mauris a libero rhoncus consectetur a nec ipsum.</li>
+                                <li>Nulla eget tellus sit amet neque egestas consequat.</li>
+                                <li>Pellentesque ac neque ut arcu feugiat aliquet at ut libero.</li>
+                                <li>Pellentesque in est quis nibh scelerisque volutpat.</li>
+                                <li>Proin sit amet ipsum imperdiet nulla lacinia interdum.</li>
+                                <li>Proin sed risus a diam condimentum congue.</li>
+                                <li>Proin eget libero lacinia, consectetur justo quis, feugiat ante.</li>
+                        </ul>
+                    </aside>
+                    <aside>
+                            <h2>This one is too</h2>
+                            <ul>
+                                    <li>Vestibulum vel mauris a libero rhoncus consectetur a nec ipsum.</li>
+                                    <li>Nulla eget tellus sit amet neque egestas consequat.</li>
+                                    <li>Pellentesque ac neque ut arcu feugiat aliquet at ut libero.</li>
+                                    <li>Pellentesque in est quis nibh scelerisque volutpat.</li>
+                                    <li>Proin sit amet ipsum imperdiet nulla lacinia interdum.</li>
+                                    <li>Proin sed risus a diam condimentum congue.</li>
+                                    <li>Proin eget libero lacinia, consectetur justo quis, feugiat ante.</li>
+                            </ul>
+                        </aside>
+                </div>
+        </div>
+
+        <footer style=" display: block;" >
+            <p>&copy;Joseph Graves - 2018</p>
+            <p>{{time}}</p>
+        </footer>
+    </body>
+
+    
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
